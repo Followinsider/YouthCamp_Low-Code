@@ -3,7 +3,7 @@ export default function () {
         '<!doctype html>',
         '<html>',
         '<head>',
-        window.document.head.innerHTML.replace(/<script[^>]*>/gi, ''),
+        window.document.head.innerHTML.replace(/<(link|script)[^>]*>/gi, ''),
         '</head>',
         '<body>',
         this.$refs.container.querySelector('.canvas-container').innerHTML,
