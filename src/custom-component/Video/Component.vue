@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import OnEvent from '../common/OnEvent'
+
 export default {
     props: {
         propValue: {
@@ -36,6 +38,7 @@ export default {
             default: () => {},
         },
     },
+    extends: OnEvent,
     data() {
         return {
             videolink: this.propValue.url,

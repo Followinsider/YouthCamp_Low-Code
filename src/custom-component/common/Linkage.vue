@@ -71,6 +71,7 @@ export default {
             eventOptions: [
                 { label: '点击', value: 'v-click' },
                 { label: '悬浮', value: 'v-hover' },
+                { label: '双击', value: 'v-dblclick' },
             ],
             oldOpacity: '',
             oldBackgroundColor: '',

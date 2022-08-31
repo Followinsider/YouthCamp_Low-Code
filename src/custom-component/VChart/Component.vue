@@ -7,6 +7,7 @@
 
 <script>
 import { optionsum } from '@/custom-component/VChart/data.js'
+import OnEvent from '../common/OnEvent'
 
 export default {
     props: {
@@ -20,6 +21,7 @@ export default {
             default: () => {},
         },
     },
+    extends: OnEvent,
     data() {
         return {
             optionsum,

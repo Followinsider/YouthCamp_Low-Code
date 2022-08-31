@@ -27,31 +27,31 @@ export const commonAttr = {
 const list = [
 
     // 文本框组件
-    {
-        component: 'VText',
-        label: '文字',
-        propValue: '双击编辑文字',
-        icon: 'wenben',
-        request: {
-            method: 'GET',
-            data: [],
-            url: '',
-            series: false,
-            time: 1000,
-            paramType: '', // string object array
-            requestCount: 0, // 请求次数限制，0 为无限
-        },
-        style: {
-            width: 200,
-            height: 28,
-            fontSize: '',
-            fontWeight: 400,
-            lineHeight: '',
-            letterSpacing: 0,
-            textAlign: '',
-            color: '',
-        },
-    },
+    // {
+    //     component: 'VText',
+    //     label: '文字',
+    //     propValue: '双击编辑文字',
+    //     icon: 'wenben',
+    //     request: {
+    //         method: 'GET',
+    //         data: [],
+    //         url: '',
+    //         series: false,
+    //         time: 1000,
+    //         paramType: '', // string object array
+    //         requestCount: 0, // 请求次数限制，0 为无限
+    //     },
+    //     style: {
+    //         width: 200,
+    //         height: 28,
+    //         fontSize: '',
+    //         fontWeight: 400,
+    //         lineHeight: '',
+    //         letterSpacing: 0,
+    //         textAlign: '',
+    //         color: '',
+    //     },
+    // },
 
     // 按钮组件
     {
@@ -79,10 +79,9 @@ const list = [
     {
         component: 'Picture',
         label: '图片',
-        icon: 'tupian',
+        icon: 'el-icon-picture-outline',
         propValue: {
             url: require('@/assets/title.jpg'),
-            // url: '../assets/title.jpg',
             flip: {
                 horizontal: false,
                 vertical: false,
@@ -95,139 +94,38 @@ const list = [
         },
     },
 
-    // 矩形组件
-    {
-        component: 'RectShape',
-        label: '矩形',
-        propValue: '&nbsp;',
-        icon: 'juxing',
-        style: {
-            width: 200,
-            height: 200,
-            fontSize: '',
-            fontWeight: 400,
-            lineHeight: '',
-            letterSpacing: 0,
-            textAlign: 'center',
-            color: '',
-            borderColor: '#000',
-            borderWidth: 1,
-            backgroundColor: '',
-            borderStyle: 'solid',
-            borderRadius: '',
-            verticalAlign: 'middle',
-        },
-    },
-
-    // 直线组件
-    {
-        component: 'LineShape',
-        label: '直线',
-        propValue: '',
-        icon: 'zhixian',
-        style: {
-            width: 200,
-            height: 2,
-            backgroundColor: '#000',
-        },
-    },
-
-    // 圆形组件
-    {
-        component: 'CircleShape',
-        label: '圆形',
-        propValue: '&nbsp;',
-        icon: '24gl-circle',
-        style: {
-            width: 200,
-            height: 200,
-            fontSize: '',
-            fontWeight: 400,
-            lineHeight: '',
-            letterSpacing: 0,
-            textAlign: 'center',
-            color: '',
-            borderColor: '#000',
-            borderWidth: 1,
-            backgroundColor: '',
-            borderStyle: 'solid',
-            borderRadius: '',
-            verticalAlign: 'middle',
-        },
-    },
-
-    // 星形组件
-    {
-        component: 'SVGStar',
-        label: '星形',
-        icon: 'kongwujiaoxing',
-        propValue: '',
-        style: {
-            width: 80,
-            height: 80,
-            fontSize: '',
-            fontWeight: 400,
-            lineHeight: '',
-            letterSpacing: 0,
-            textAlign: 'center',
-            color: '',
-            borderColor: '#000',
-            backgroundColor: 'rgba(255, 255, 255, 1)',
-        },
-    },
-
-    // 三角形组件
-    {
-        component: 'SVGTriangle',
-        label: '三角形',
-        icon: 'xingzhuang-sanjiaoxing',
-        propValue: '',
-        style: {
-            width: 80,
-            height: 80,
-            fontSize: '',
-            fontWeight: 400,
-            lineHeight: '',
-            letterSpacing: 0,
-            textAlign: 'center',
-            color: '',
-            borderColor: '#000',
-            backgroundColor: 'rgba(255, 255, 255, 1)',
-        },
-    },
-
     // 表格组件
-    {
-        component: 'VTable',
-        label: '表格',
-        icon: 'biaoge',
-        propValue: {
-            data: [
-                ['表头1', '表头2', '表头3'],
-                ['内容1', '内容2', '内容3'],
-            ],
-            stripe: true,
-            thBold: true,
-        },
-        request: {
-            method: 'GET',
-            data: [],
-            url: '',
-            series: false,
-            time: 1000,
-            paramType: '', // string object array
-            requestCount: 0, // 请求次数限制，0 为无限
-        },
-        style: {
-            width: 600,
-            height: 200,
-            fontSize: '',
-            fontWeight: 400,
-            textAlign: 'center',
-            color: '',
-            backgroundColor: 'rgba(255, 255, 255, 1)',
-        },
-    },
+    // {
+    //     component: 'VTable',
+    //     label: '表格',
+    //     icon: 'biaoge',
+    //     propValue: {
+    //         data: [
+    //             ['表头1', '表头2', '表头3'],
+    //             ['内容1', '内容2', '内容3'],
+    //         ],
+    //         stripe: true,
+    //         thBold: true,
+    //     },
+    //     request: {
+    //         method: 'GET',
+    //         data: [],
+    //         url: '',
+    //         series: false,
+    //         time: 1000,
+    //         paramType: '', // string object array
+    //         requestCount: 0, // 请求次数限制，0 为无限
+    //     },
+    //     style: {
+    //         width: 600,
+    //         height: 200,
+    //         fontSize: '',
+    //         fontWeight: 400,
+    //         textAlign: 'center',
+    //         color: '',
+    //         backgroundColor: 'rgba(255, 255, 255, 1)',
+    //     },
+    // },
 
     // 链接组件
     {
@@ -295,6 +193,7 @@ const list = [
             width: 500,
             height: 300,
             borderRadius: '',
+            backgroundColor: '',
         },
     },
     {
@@ -312,6 +211,16 @@ const list = [
             height: 300,
             borderRadius: '',
             backgroundColor: 'white',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: 'center',
+            color: '',
+            borderColor: '#000',
+            borderWidth: 1,
+            borderStyle: 'solid',
+            verticalAlign: 'middle',
         },
     },
     {
@@ -347,7 +256,9 @@ const list = [
         style: {
             width: 500,
             height: 300,
-            fontSize: 14,
+            borderRadius: '',
+            backgroundColor: 'white',
+            fontSize: '',
             fontWeight: 400,
             lineHeight: '',
             letterSpacing: 0,
@@ -355,9 +266,7 @@ const list = [
             color: '',
             borderColor: '#000',
             borderWidth: 1,
-            backgroundColor: '',
             borderStyle: 'solid',
-            borderRadius: '',
             verticalAlign: 'middle',
         },
     },

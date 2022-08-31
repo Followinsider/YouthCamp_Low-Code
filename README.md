@@ -11,9 +11,7 @@
 
 ### 📌项目演示地址
 
-```
-https://followinsider.github.io/YouthCamp_Low-Code/
-```
+[Demo](https://leoyongyuan.github.io/YouthCamp_Low-Code/dist/index.html#/)
 
 
 ### ▶如何运行
