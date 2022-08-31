@@ -1,10 +1,13 @@
 <template>
     <el-collapse-item title="组件联动（预览生效）" name="linkage" class="linkage-container">
         <el-form>
+            <!-- 遍历联动组件数量 -->
             <div v-for="(item, index) in linkage.data" :key="index" class="linkage-component">
+                <!-- 删除联动组件 -->
                 <div class="div-guanbi" @click="deleteLinkageData(index)">
-                    <span class="iconfont icon-guanbi"></span>
+                    <span class="iconfont icon-guanbi">X</span>
                 </div>
+                <!-- 选择联动组件 -->
                 <el-select v-model="item.id" placeholder="请选择联动组件" class="testtest">
                     <el-option
                         v-for="(component, i) in componentData"
@@ -15,6 +18,7 @@
                         <div @mouseenter="onEnter(i)" @mouseout="onOut(i)">{{ component.label }}</div>
                     </el-option>
                 </el-select>
+                <!-- 选择监听事件 -->
                 <el-select v-model="item.event" placeholder="请选择监听事件">
                     <el-option
                         v-for="e in eventOptions"
@@ -33,7 +37,9 @@
                             :label="styleMap[attr]"
                         ></el-option>
                     </el-select>
+                    <!-- 选中属性为颜色后出现画板 -->
                     <el-color-picker v-if="isIncludesColor(e.key)" v-model="e.value" show-alpha></el-color-picker>
+                    <!-- 选中属性为左右对齐、上下对齐、边框风格后出现对应的选项 -->
                     <el-select v-else-if="selectKey.includes(e.key)" v-model="e.value">
                         <el-option
                             v-for="option in optionMap[e.key]"
@@ -42,19 +48,27 @@
                             :value="option.value"
                         ></el-option>
                     </el-select>
+                    <!-- 选中属性非以上两种就提供输入框 -->
                     <el-input
                         v-else
                         v-model.number="e.value"
                         type="number"
                         placeholder="请输入"
                     />
+                    <!-- 点击删除当前组件需要修改的属性 -->
                     <span class="iconfont icon-shanchu" @click="deleteData(item.style, i)"></span>
                 </div>
+                <!-- 
+                    点击后addAttr方法增加一个对象，原来div遍历后将会再加上新的属性填空区域
+                 -->
                 <el-button @click="addAttr(item.style)">添加属性</el-button>
             </div>
+
+            <!-- 同理添加属性 -->
             <el-button style="margin-bottom: 10px;" @click="addComponent">添加组件</el-button>
             <p>过渡时间（秒）</p>
             <el-input v-model="linkage.duration" class="input-duration" placeholder="请输入"></el-input>
+            <el-button @click="test">测试</el-button>
         </el-form>
     </el-collapse-item>
 </template>
@@ -87,19 +101,22 @@ export default {
             return this.$store.state.curComponent
         },
     },
+
     methods: {
+        // 鼠标移入产生动画效果
         onEnter(index) {
             this.oldOpacity = this.componentData[index].style.opacity
             this.oldBackgroundColor = this.componentData[index].style.backgroundColor
             this.componentData[index].style.opacity = '.3'
             this.componentData[index].style.backgroundColor = '#409EFF'
         },
-
+        // 鼠标移出产生动画效果
         onOut(index) {
             this.componentData[index].style.opacity = this.oldOpacity
             this.componentData[index].style.backgroundColor = this.oldBackgroundColor
         },
 
+        // 判断是否选中颜色
         isIncludesColor(str) {
             return str.toLowerCase().includes('color')
         },
@@ -122,6 +139,10 @@ export default {
 
         deleteLinkageData(index) {
             this.linkage.data.splice(index, 1)
+        },
+
+        test() {
+            console.log(this.curComponent)
         },
     },
 }
@@ -155,7 +176,7 @@ export default {
             }
         }
     }
-
+    
     .el-select {
         margin-bottom: 10px;
     }

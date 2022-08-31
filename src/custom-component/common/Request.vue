@@ -27,6 +27,7 @@
                     >
                     </el-option>
                 </el-select>
+                <!-- 不同参数填空区域不同 -->
                 <div v-if="request.paramType === 'array'" class="param-container">
                     <p>数据项</p>
                     <div v-for="(item, index) in request.data" :key="index" class="div-delete">
