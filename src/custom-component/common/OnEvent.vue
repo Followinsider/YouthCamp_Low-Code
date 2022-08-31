@@ -16,6 +16,7 @@ export default {
         if (this.linkage?.data?.length) {
             eventBus.$on('v-click', this.onClick)
             eventBus.$on('v-hover', this.onHover)
+            eventBus.$on('v-dblclick', this.onDblclick)
         }
     },
     mounted() {
@@ -28,6 +29,7 @@ export default {
         if (this.linkage?.data?.length) {
             eventBus.$off('v-click', this.onClick)
             eventBus.$off('v-hover', this.onHover)
+            eventBus.$on('v-dblclick', this.onDblclick)
         }
     },
     methods: {
@@ -43,6 +45,12 @@ export default {
 
         onClick(componentId) {
             const data = this.linkage.data.filter(item => item.id === componentId && item.event === 'v-click')
+            this.changeStyle(data)
+        },
+
+        onDblclick(componentId) {
+            const data = this.linkage.data.filter(item => item.id === componentId && item.event === 'v-dblclick')
+            console.log('v-dblclick')
             this.changeStyle(data)
         },
 

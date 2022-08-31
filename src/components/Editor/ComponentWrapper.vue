@@ -1,5 +1,5 @@
 <template>
-    <div @click="onClick" @mouseenter="onMouseEnter">
+    <div @click="onClick" @mouseenter="onMouseEnter" @dblclick="ondblClick">
         <component
             :is="config.component"
             v-if="config.component.startsWith('SVG')"
@@ -58,6 +58,10 @@ export default {
 
         onMouseEnter() {
             eventBus.$emit('v-hover', this.config.id)
+        },
+
+        ondblClick() {
+            eventBus.$emit('v-dblclick', this.config.id)
         },
     },
 }
